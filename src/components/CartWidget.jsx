@@ -5,10 +5,10 @@ const CartWidget = () => {
   return (
     <>
         <h5>
-          <a href="https://www.flaticon.es/iconos-gratis/tienda" title="tienda iconos" target='blank'> <img src={carritoCompra} alt="" /> </a>
+          <img src={carritoCompra} alt="" /> 
         </h5>
         
-        5
+        <span>5</span>
     </>
   )
 }
