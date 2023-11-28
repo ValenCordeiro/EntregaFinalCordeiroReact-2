@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom'
 const ItemList = ({videoJuegos}) => {
 
     const {categoria} = useParams()
-
+    console.log(videoJuegos)
     return (
     <>
 
