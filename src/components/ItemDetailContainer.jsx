@@ -6,11 +6,11 @@ import {Datos, videoJuegos} from './Datos';
 
 const ItemDetailContainer = () => {
 
-    const [videoJuego, setVideoJuego] = useState(null);
+    const [videoJuego, setVideoJuego] = useState([]);
     const {id} = useParams()
     
     useEffect(() => {
-        const videoJuego = Datos.videoJuegos.find((videoJuego) => videoJuego.id === parseInt(id))
+        const videoJuego = videoJuegos.find((videoJuego) => videoJuego.id === parseInt(id))
         setVideoJuego(videoJuego);
       }, [id]);
 

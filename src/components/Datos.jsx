@@ -5,7 +5,7 @@ import minecraft from '../assets/Minecraft.jpeg'
 import toTheMoon from '../assets/ToTheMoon.jpeg'
 import civilizationVI from '../assets/CivilizationVI.jpeg'
 
-const videoJuegos = [
+export const videoJuegos = [
     { id: 1, titulo: "PacMan", precio: 200, categoria: "Arcade", img: pacMan},
     { id: 2, titulo: "Call Of Duty: Black Ops", precio: 350, categoria: "Acción", img: codBO},
     { id: 3, titulo: "Minecraft", precio: 500, categoria: "Aventuras", img: minecraft},
@@ -13,7 +13,7 @@ const videoJuegos = [
     { id: 5, titulo: "Civilization VI", precio: 700, categoria: "Estrategia", img: civilizationVI}
 ]
 
-const Datos = () => {
+export const Datos = () => {
 
     
     return (
@@ -22,4 +22,4 @@ const Datos = () => {
   )
 }
 
-export {Datos, videoJuegos}
+export default {Datos, videoJuegos}

@@ -6,14 +6,22 @@ import { useParams } from 'react-router-dom'
 const ItemList = ({videoJuegos}) => {
 
     const {categoria} = useParams()
-    console.log(videoJuegos)
+
+    let categoriaMostrar = '';
+    if (categoria && videoJuegos.length > 0) {
+      const primerJuegoCategoria = videoJuegos.find(juego => juego.categoria === categoria);
+      categoriaMostrar = primerJuegoCategoria ? primerJuegoCategoria.categoria : 'Video Juegos:';
+    } else {
+      categoriaMostrar = 'VideoJuegos:';
+    }
+
     return (
     <>
 
         <Flex direction={'column'}>
 
             <Box bg='purple.500' w='100%' p={4} color='white'>
-                <h1> {categoria == undefined ? 'VideoJuegos:' : `${videoJuegos[0].categoria}:`} </h1>
+                <h1> {categoriaMostrar} </h1>
             </Box>
 
             <Box bg='purple.500' w='100%' p={4} color='white'>
