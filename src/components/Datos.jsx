@@ -54,7 +54,7 @@ export const obtenerVideoJuegosPorID = (id) => {
 
   return new Promise((res, rej) => {
 
-    const videoJuegoPorID = videoJuegos.filter((vid) => vid.id === id);
+    const videoJuegoPorID = videoJuegos.find((vid) => vid.id === parseInt(id));
 
     setTimeout(() => {
 

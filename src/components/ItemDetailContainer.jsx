@@ -8,11 +8,11 @@ const ItemDetailContainer = () => {
 
     const [videoJuego, setVideoJuego] = useState([]);
     const {id} = useParams()
-    
+
     useEffect(() => {
         obtenerVideoJuegosPorID(id)
         .then((res) => {
-            setVideoJuego(res);
+          setVideoJuego(res);
         })
         .catch((rej) => {
           console.log(rej)
