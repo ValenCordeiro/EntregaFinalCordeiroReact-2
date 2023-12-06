@@ -2,7 +2,7 @@ import { SimpleGrid, Center, Box } from '@chakra-ui/react';
 import React, { useState, useEffect } from 'react';
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
-import {Datos, videoJuegos } from './Datos';
+import { obtenerTodosLosVideoJuegos, obtenerVideoJuegosPorCategoria } from './Datos';
 
 const ItemListContainer = () => {
   const [filtroVideojuegos, setFiltroVideojuegos] = useState([]);
@@ -10,10 +10,21 @@ const ItemListContainer = () => {
 
   useEffect(() => {
     if (categoria !== undefined) {
-      const juegosFiltrados = videoJuegos.filter((videoJuego) => videoJuego.categoria === categoria);
-      setFiltroVideojuegos(juegosFiltrados);
+      obtenerVideoJuegosPorCategoria(categoria)
+      .then((res) => {
+        setFiltroVideojuegos(res);
+      })
+      .catch((rej) => {
+        console.log(rej)
+      })
     } else {
-      setFiltroVideojuegos(videoJuegos);
+      obtenerTodosLosVideoJuegos()
+      .then((res) => {
+        setFiltroVideojuegos(res);
+      })
+      .catch((rej) => {
+        console.log(rej)
+      })
     }
   }, [categoria]);
   

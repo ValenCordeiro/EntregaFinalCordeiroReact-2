@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import {useParams} from 'react-router-dom'
 import ItemDetail from './ItemDetail'
 import { Box, Center } from '@chakra-ui/react'
-import {Datos, videoJuegos} from './Datos';
+import { obtenerVideoJuegosPorID } from './Datos';
 
 const ItemDetailContainer = () => {
 
@@ -10,8 +10,13 @@ const ItemDetailContainer = () => {
     const {id} = useParams()
     
     useEffect(() => {
-        const videoJuego = videoJuegos.find((videoJuego) => videoJuego.id === parseInt(id))
-        setVideoJuego(videoJuego);
+        obtenerVideoJuegosPorID(id)
+        .then((res) => {
+            setVideoJuego(res);
+        })
+        .catch((rej) => {
+          console.log(rej)
+        })
       }, [id]);
 
 

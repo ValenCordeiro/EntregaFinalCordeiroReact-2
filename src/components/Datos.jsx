@@ -13,6 +13,62 @@ export const videoJuegos = [
     { id: 5, titulo: "Civilization VI", precio: 700, categoria: "Estrategia", img: civilizationVI}
 ]
 
+
+export const obtenerTodosLosVideoJuegos = () => {
+
+  return new Promise((res, rej) => {
+
+    setTimeout(() => {
+
+      res(videoJuegos);
+
+      rej("ERROR")
+
+    }, 500);
+
+  });
+
+};
+
+
+export const obtenerVideoJuegosPorCategoria = (categoria) => {
+
+  return new Promise((res, rej) => {
+
+    const videoJuegosFiltrados = videoJuegos.filter((vid) => vid.categoria === categoria);
+
+    setTimeout(() => {
+
+      res(videoJuegosFiltrados);
+
+      rej("ERROR")
+
+    }, 500);
+
+  });
+
+};
+
+
+export const obtenerVideoJuegosPorID = (id) => {
+
+  return new Promise((res, rej) => {
+
+    const videoJuegoPorID = videoJuegos.filter((vid) => vid.id === id);
+
+    setTimeout(() => {
+
+      res(videoJuegoPorID);
+
+      rej("ERROR")
+
+    }, 500);
+
+  });
+
+};
+
+
 export const Datos = () => {
 
     
@@ -22,4 +78,4 @@ export const Datos = () => {
   )
 }
 
-export default {Datos, videoJuegos}
+export default { obtenerTodosLosVideoJuegos, obtenerVideoJuegosPorCategoria, obtenerVideoJuegosPorID }
