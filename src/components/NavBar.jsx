@@ -46,7 +46,7 @@ const NavBar = () => {
                   <MenuItem bg='purple.200'> Arcade </MenuItem>
                 </Link>
 
-                <Link to={'/category/Acción'}>
+                <Link to={'/category/Accion'}>
                   <MenuItem bg='purple.200'> Acción </MenuItem>
                 </Link>
 
@@ -70,7 +70,9 @@ const NavBar = () => {
 
         <WrapItem>
           <Center w='200px' h='200px' bg='purple.400'>
-            <CartWidget/>
+            <Link to={'/cart'}>
+              <CartWidget/>
+            </Link>
           </Center>
         </WrapItem>
 

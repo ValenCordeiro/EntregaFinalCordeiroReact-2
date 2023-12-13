@@ -8,7 +8,7 @@ const CartWidget = () => {
           <img src={carritoCompra} alt="" /> 
         </h5>
         
-        <span>5</span>
+        <span>0</span>
     </>
   )
 }
