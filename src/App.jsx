@@ -5,7 +5,7 @@ import ItemDetailContainer from './components/ItemDetailContainer'
 import {SimpleGrid, Box} from '@chakra-ui/react'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import CheckOut from './components/CheckOut'
-import CartContext from './components/CartContext'
+import {CartContext} from './components/CartContext'
 
 const App = () => {
   
